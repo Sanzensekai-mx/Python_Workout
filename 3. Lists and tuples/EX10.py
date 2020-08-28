@@ -48,3 +48,28 @@ def sum_numeric(*args):
 print(sum_numeric(10, 20, 'a', '30', 'bcd'))
 print(sum_numeric(50, 80.5, '30', [1, 2, 3]))
 
+
+def sum_dict(list_of_dicts):
+    result_dict = {}
+    all_keys = [el for key in list_of_dicts for el in key]
+    not_all_keys = []
+    for dict_l in list_of_dicts:
+        for k, v in dict_l.items():
+            if all_keys.count(k) > 1 and not_all_keys.count(k) == 0:
+                result_dict[k] = [v]
+                not_all_keys.append(k)
+                continue
+            elif not_all_keys.count(k) != 0:
+                result_dict[k].append(v)
+                not_all_keys.append(k)
+                continue
+            else:
+                result_dict[k] = v
+                not_all_keys.append(k)
+    # print(not_all_keys)
+    # print(all_keys)
+    return result_dict
+
+
+print(sum_dict([{'A': 11, 'B': 12, 'C': '15', 'a': 3}, {'a': 2, 'b': 1, 'c': '5'}, {'a': 2, 'b': 3}, {'a': 5}]))
+print(sum_dict([{'a': 1, 'b': 2, 'c': 3}, {'a': 1, 'b': 2}]))
