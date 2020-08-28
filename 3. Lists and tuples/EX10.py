@@ -23,8 +23,13 @@ def bigger_than(first_elem, *args):
                 output -= item
             continue
         else:
-            output += item
+            if output != item:
+                output += item
+            else:
+                continue
     return output
 
 
 print(bigger_than(10, 5, 20, 30, 6))
+print(bigger_than(11, 10, 25, 26, 1))
+print(bigger_than('abc', 'def', 'adads'))
