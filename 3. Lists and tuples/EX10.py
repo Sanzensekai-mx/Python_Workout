@@ -30,6 +30,21 @@ def bigger_than(first_elem, *args):
     return output
 
 
-print(bigger_than(10, 5, 20, 30, 6))
-print(bigger_than(11, 10, 25, 26, 1))
-print(bigger_than('abc', 'def', 'adads'))
+# print(bigger_than(10, 5, 20, 30, 6))
+# print(bigger_than(11, 10, 25, 26, 1))
+# print(bigger_than('abc', 'def', 'adads'))
+
+
+def sum_numeric(*args):
+    total = 0
+    for item in args:
+        try:
+            total += int(item)
+        except Exception as e:
+            continue
+    return total
+
+
+print(sum_numeric(10, 20, 'a', '30', 'bcd'))
+print(sum_numeric(50, 80.5, '30', [1, 2, 3]))
+
