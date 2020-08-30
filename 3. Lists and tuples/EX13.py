@@ -29,4 +29,37 @@ def format_sort_records_named_tuple(records):
     print('\n'.join(output))
 
 
-format_sort_records_named_tuple(PEOPLE)
+# format_sort_records_named_tuple(PEOPLE)
+
+
+movies_nominated = [('Roma', 135, 'Alfonso Cuaron'), ('The Favourite', 120, 'Yorgos Lanthimos'),
+                    ('Vice', 132, 'Adam McKay'), ('Black Panther', 134, 'Райан Куглер')]
+
+
+def sort_oscar_list(list_of_tuples):
+
+    print('''
+Sort by:
+1) title
+2) length
+3) Director's name
+    ''')
+    while True:
+        try:
+            user_chose = int(input('--> '))
+        except ValueError:
+            print('enter the number')
+        if user_chose == 1:
+            for film in sorted(movies_nominated, key=operator.itemgetter(0)):
+                print('{0:14} | {1:5} | {2:20}'.format(*film))
+        elif user_chose == 2:
+            for film in sorted(movies_nominated, key=operator.itemgetter(1)):
+                print('{1} | {0:14} | {2:20}'.format(*film))
+        elif user_chose == 3:
+            for film in sorted(movies_nominated, key=operator.itemgetter(2)):
+                print('{2:17} | {0:15} | {1:5}'.format(*film))
+        else:
+            break
+
+
+sort_oscar_list(movies_nominated)
