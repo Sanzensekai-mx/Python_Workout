@@ -37,7 +37,6 @@ movies_nominated = [('Roma', 135, 'Alfonso Cuaron'), ('The Favourite', 120, 'Yor
 
 
 def sort_oscar_list(list_of_tuples):
-
     print('''
 Sort by:
 1) title
