@@ -32,7 +32,26 @@ def check_user_pass():
         print('Incorrect username or password')
 
 
-check_user_pass()
+# check_user_pass()
 
 
+date_temp = {'2.09': '+19', '3.09': '+18', '4.09': '+18', '5.09': '+19', '6.09': '+20'}
 
+
+def temp_in_date():
+    while True:
+        user_input = input('Enter the date (example: 1.08, 7.09): ').strip()
+        try:
+            print(
+                f'Date {str(int(user_input[0]) - 1) + user_input[1:]} temp is {date_temp[str(int(user_input[0]) - 1) + user_input[1:]]}')
+        except KeyError:
+            print('Don\'t have information for yesterday')
+        print(f'Date {user_input} temp is {date_temp[user_input]}')
+        try:
+            print(
+                f'Date {str(int(user_input[0]) + 1) + user_input[1:]} temp is {date_temp[str(int(user_input[0]) + 1) + user_input[1:]]}')
+        except KeyError:
+            print('Don\'t have information for tomorrow')
+
+
+temp_in_date()
