@@ -54,4 +54,26 @@ def temp_in_date():
             print('Don\'t have information for tomorrow')
 
 
-temp_in_date()
+# temp_in_date()
+
+import datetime
+
+names = {'Ivan': datetime.date(year=2000, month=4, day=27), 'Ilnaz': datetime.date(year=2000, month=4, day=25),
+         'Mother': datetime.date(year=1978, month=12, day=8)}
+
+
+def how_many_days():
+    today = datetime.date.today()
+    while True:
+        user_input = input('--> ').strip()
+        if user_input:
+            try:
+                period = today - names[user_input]
+                print(f'days of life {period.days}')
+            except KeyError:
+                print('Нет имени в словаре')
+        else:
+            break
+
+
+how_many_days()
