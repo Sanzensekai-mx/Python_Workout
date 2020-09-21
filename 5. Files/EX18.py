@@ -1,5 +1,5 @@
 import os
-import pprint
+import operator
 
 
 def get_final_line(filename):
@@ -64,5 +64,5 @@ def number_of_vowel(file):
 
 func = number_of_vowel('stix_for_18_3.txt')
 max_len = max((len(str(i)) for i in func))
-for k, v in func.items():
+for k, v in sorted(func.items()):
     print(f'{k} - {v}')
