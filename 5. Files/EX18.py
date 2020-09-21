@@ -1,4 +1,5 @@
 import os
+import pprint
 
 
 def get_final_line(filename):
@@ -45,4 +46,23 @@ def collum_2(file_with_cols):
     print(f'sum - {all_sum}')
 
 
-collum_2('for_18_2.txt')
+# collum_2('for_18_2.txt')
+
+
+def number_of_vowel(file):
+    num_vowel_dict = {}
+    with open(file, 'r', encoding='utf-8') as f:
+        for line in f:
+            for char in line:
+                if char in 'aeouiyAEOIUY':
+                    if char in num_vowel_dict.keys():
+                        num_vowel_dict[char] += line.count(char)
+                        continue
+                    num_vowel_dict[char] = line.count(char)
+    return num_vowel_dict
+
+
+func = number_of_vowel('stix_for_18_3.txt')
+max_len = max((len(str(i)) for i in func))
+for k, v in func.items():
+    print(f'{k} - {v}')
