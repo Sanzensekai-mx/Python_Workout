@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # run only on linux
 import pprint
-
+import pprint
 
 # main ex
 
@@ -50,3 +50,16 @@ def enter_int_to_dict():
 
 
 print(enter_int_to_dict())
+
+
+def passwd_to_dict_to_dict(passwd_file):
+    users = {}
+    with open(passwd_file, 'r', encoding='utf-8') as passwd:
+        for line in passwd:
+            if not line.startswith(('#', '\n')):
+                user_info = line.split(':')
+                users[user_info[0]] = {'id': user_info[2], 'home_dir': user_info[-2], 'shell': user_info[-1].rstrip('\n')}
+    return users
+
+
+pprint.pprint(passwd_to_dict_to_dict('/etc/passwd'))
