@@ -3,6 +3,7 @@
 # run only on linux
 import pprint
 
+
 # main ex
 
 
@@ -35,4 +36,17 @@ def passwd_to_dict_2(passwd_file):
     return login_shells_users
 
 
-pprint.pprint(passwd_to_dict_2('/etc/passwd'))
+# pprint.pprint(passwd_to_dict_2('/etc/passwd'))
+
+
+def ent_int_to_dict():
+    result = {}
+    print('Enter integers, separated by spaces')
+    user_input = input('--> ').strip()
+    split_str = [int(i) for i in user_input.split()]
+    for num in split_str:
+        result[num] = [int(num / i) for i in split_str if num % i == 0]
+    return result
+
+
+print(ent_int_to_dict())
