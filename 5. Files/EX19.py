@@ -39,7 +39,7 @@ def passwd_to_dict_2(passwd_file):
 # pprint.pprint(passwd_to_dict_2('/etc/passwd'))
 
 
-def ent_int_to_dict():
+def enter_int_to_dict():
     result = {}
     print('Enter integers, separated by spaces')
     user_input = input('--> ').strip()
@@ -49,4 +49,4 @@ def ent_int_to_dict():
     return result
 
 
-print(ent_int_to_dict())
+print(enter_int_to_dict())
