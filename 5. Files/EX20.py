@@ -1,3 +1,6 @@
+import os
+
+
 def wordcount(file):
     num_char = 0
     num_words = 0
@@ -42,4 +45,36 @@ def wordcount_sol(filename):
         print(f'{key}: {value}')
 
 
-wordcount_sol('wcfile.txt')
+# wordcount_sol('wcfile.txt')
+
+# EX20_1
+
+
+def count_specific_words(file_name, *args):
+    count_result = {}
+    for arg in args:
+        count_result[arg] = 0
+    with open(file_name, 'r', encoding='utf-8') as f:
+        for line in f:
+            for word in line.split():
+                if word.strip(',!?;:.') in args:
+                    count_result[word.strip(',!?;:.')] += 1
+    return count_result
+
+
+# for k, v in count_specific_words('stix.txt', 'и', 'Пусть', 'не', 'рна').items():
+#     print(f'{k} - {v}')
+
+
+# EX20_2
+
+
+def return_files_sizes():
+    file_sizes = {}
+    for name_file in os.listdir():
+        file_sizes[name_file] = os.stat(os.path.join(os.getcwd(), name_file)).st_size
+    return file_sizes
+
+
+for k, v in return_files_sizes().items():
+    print(f'{k} - {v} байт')
