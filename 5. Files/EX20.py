@@ -76,5 +76,27 @@ def return_files_sizes():
     return file_sizes
 
 
-for k, v in return_files_sizes().items():
-    print(f'{k} - {v} байт')
+# for k, v in return_files_sizes().items():
+#     print(f'{k} - {v} байт')
+
+
+# EX20_3
+
+
+def count_each_letter_files(dir_path):
+    count_letters = {}
+    os.chdir(dir_path)
+    for file in os.listdir(dir_path):
+        with open(file, 'r', encoding='utf-8') as f:
+            for line in f:
+                for letter in line.lower():
+                    if letter in '.?!,;:\n\t*^$@%()_-+=\\/][{}\'\"# —«»':
+                        continue
+                    if letter not in count_letters.keys():
+                        count_letters[letter] = 0
+                    count_letters[letter] += 1
+
+    return count_letters
+
+
+print(count_each_letter_files(os.path.join(os.getcwd(), 'dir_for_EX20_3')))
