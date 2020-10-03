@@ -1,5 +1,6 @@
 import os
 import hashlib
+import arrow
 
 
 def find_longest_word(file_name):
@@ -34,5 +35,24 @@ def use_md5(dir_name):  # path to file
     return result
 
 
-print(use_md5(os.path.join(os.getcwd())))
-print(use_md5(os.path.join(os.getcwd(), 'dir_for_EX20_3')))
+# print(use_md5(os.path.join(os.getcwd())))
+# print(use_md5(os.path.join(os.getcwd(), 'dir_for_EX20_3')))
+
+
+# EX21_2 (говнокод)
+
+
+def mod_file_dir(dir_path, dir_name_cur_dir=False):  # Принимает путь к директории
+    # first_path = dir_path
+    # if not dir_name_cur_dir:
+    #     path = dir_path
+    # else:
+    #     path = os.path.join(os.getcwd(), dir_path)
+    # for file in os.listdir(os.chdir(path)):
+    #     print(f'{file} -- {arrow.get(os.stat(file).st_mtime).shift(hours=+4).format("YYYY-MM-DD HH:mm:ss")}')
+    # os.chdir(first_path) if os.path.isabs(first_path) else os.chdir(os.path.join(os.getcwd(), dir_path))
+    pass
+
+mod_file_dir(os.path.join(os.getcwd(), 'dir_for_EX20_3'))
+mod_file_dir(os.getcwd())
+mod_file_dir('dir_for_EX20_3', dir_name_cur_dir=True)
