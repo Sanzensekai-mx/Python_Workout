@@ -2,6 +2,7 @@ import os
 import hashlib
 import arrow
 import pathlib
+import re
 
 
 def find_longest_word(file_name):
@@ -52,6 +53,22 @@ def mod_file_dir(dir_path):
     os.chdir(start_path)
 
 
-mod_file_dir(os.path.join(os.getcwd(), 'dir_for_EX20_3'))
-mod_file_dir(os.getcwd())
-mod_file_dir('dir_for_EX20_3')
+# mod_file_dir(os.path.join(os.getcwd(), 'dir_for_EX20_3'))
+# mod_file_dir(os.getcwd())
+# mod_file_dir('dir_for_EX20_3')
+
+
+# 21_3 read apache2 aceess-log file
+
+
+def read_access_log_apache2_count(log):
+    result_count_code = {}
+    pattern_mes = re.compile(r'\s[1-5]{1}\d{2}\s')
+    with open(log, 'r', encoding='utf-8') as l:
+        for line in l:
+            message = re.search(pattern_mes, line).group().strip()
+            result_count_code[message] = result_count_code.get(message, 0) + 1
+    return result_count_code
+
+
+print(read_access_log_apache2_count('mini-access-log.txt'))
