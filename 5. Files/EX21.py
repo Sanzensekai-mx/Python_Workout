@@ -1,6 +1,7 @@
 import os
 import hashlib
 import arrow
+import pathlib
 
 
 def find_longest_word(file_name):
@@ -42,17 +43,31 @@ def use_md5(dir_name):  # path to file
 # EX21_2 (говнокод)
 
 
-def mod_file_dir(dir_path, dir_name_cur_dir=False):  # Принимает путь к директории
-    # first_path = dir_path
-    # if not dir_name_cur_dir:
-    #     path = dir_path
-    # else:
-    #     path = os.path.join(os.getcwd(), dir_path)
-    # for file in os.listdir(os.chdir(path)):
-    #     print(f'{file} -- {arrow.get(os.stat(file).st_mtime).shift(hours=+4).format("YYYY-MM-DD HH:mm:ss")}')
-    # os.chdir(first_path) if os.path.isabs(first_path) else os.chdir(os.path.join(os.getcwd(), dir_path))
-    pass
+# def mod_file_dir(dir_path, dir_name_cur_dir=False):  # Принимает путь к директории
+# first_path = dir_path
+# if not dir_name_cur_dir:
+#     path = dir_path
+# else:
+#     path = os.path.join(os.getcwd(), dir_path)
+# for file in os.listdir(os.chdir(path)):
+#     print(f'{file} -- {arrow.get(os.stat(file).st_mtime).shift(hours=+4).format("YYYY-MM-DD HH:mm:ss")}')
+# os.chdir(first_path) if os.path.isabs(first_path) else os.chdir(os.path.join(os.getcwd(), dir_path))
+# pass
 
-mod_file_dir(os.path.join(os.getcwd(), 'dir_for_EX20_3'))
-mod_file_dir(os.getcwd())
-mod_file_dir('dir_for_EX20_3', dir_name_cur_dir=True)
+
+def mod_file_dir2(dir_path):
+    path = pathlib.Path(dir_path) if '/\\' in dir_path else pathlib.Path.cwd() / dir_path
+    # print(path.resolve())
+    # print(path.cwd())
+    # print(pathlib.Path.home())
+    # print(os.getcwd())
+    # print(path)
+    for file in os.listdir(path):
+        print(f'{file} -- {arrow.get(os.stat(file).st_mtime).shift(hours=+4).format("YYYY-MM-DD HH:mm:ss")}')
+    os.chdir(path.cwd())
+
+
+mod_file_dir2(os.path.join(os.getcwd(), 'dir_for_EX20_3'))
+mod_file_dir2(os.getcwd())
+# mod_file_dir('dir_for_EX20_3', dir_name_cur_dir=True)
+mod_file_dir2('dir_for_EX20_3')
