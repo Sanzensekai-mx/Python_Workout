@@ -1,0 +1,6 @@
+Ivan	qwerty	<class 'str'>
+Andri	1234	<class 'str'>
+K	first	<class 'str'>
+DD-walker	1000	<class 'int'>
+DD-dog	[1, 23, 34]	<class 'list'>
+Marina	{1: 2, 2: 3}	<class 'dict'>

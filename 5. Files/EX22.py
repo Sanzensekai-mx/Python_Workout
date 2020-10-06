@@ -30,4 +30,19 @@ def passwd_to_csv_user_fields(passwd_style_file, new_csv_file):
                     break
 
 
-passwd_to_csv_user_fields('passwd', 'output_ex22_1.csv')
+# passwd_to_csv_user_fields('passwd', 'output_ex22_1.csv')
+
+
+# EX22_2
+user = {'Ivan': 'qwerty', 'Andri': '1234', 'K': 'first', 'DD-walker': 1000, 'DD-dog': [1, 23, 34],
+        'Marina': {1: 2, 2: 3}}
+
+
+def dict_to_csv(dict_csv):
+    with open('csv_from_dict_ex22_2.csv', 'w', encoding='utf-8') as output:
+        output = csv.writer(output, delimiter='\t')
+        for k, v in dict_csv.items():
+            output.writerow((k, v, type(v)))
+
+
+dict_to_csv(user)
