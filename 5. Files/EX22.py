@@ -1,4 +1,5 @@
 import csv
+import random
 
 
 def passwd_to_csv(passwd_style_file, new_csv_file):
@@ -45,4 +46,24 @@ def dict_to_csv(dict_csv):
             output.writerow((k, v, type(v)))
 
 
-dict_to_csv(user)
+# dict_to_csv(user)
+
+
+#  EX22_3
+
+
+def sum_random_num_in_csv_file(csv_file):
+    with open(csv_file, 'w', encoding='utf-8') as write_f:
+        write_f = csv.writer(write_f, delimiter=' ')
+        for line in range(10):
+            write_f.writerow((random.randint(10, 100) for i in range(10)))
+    with open(csv_file, 'r', encoding='utf-8') as read_f:
+        read_f = csv.reader(read_f, delimiter=' ')
+        for line in read_f:
+            # print(line)
+            line_list = [int(i) for i in line]
+            if len(line) > 1:
+                print(f'sum: {sum(line_list)}  average: {sum(line_list)/len(line_list)}')
+
+
+sum_random_num_in_csv_file('csv_ex22_3.csv')
