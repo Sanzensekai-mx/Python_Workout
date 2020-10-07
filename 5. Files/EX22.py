@@ -31,7 +31,7 @@ def passwd_to_csv_user_fields(passwd_style_file, new_csv_file):
                     break
 
 
-# passwd_to_csv_user_fields('passwd', 'output_ex22_1.csv')
+# passwd_to_csv_user_fields('passwd', 'output_ex22_1_ex23_1.csv')
 
 
 # EX22_2

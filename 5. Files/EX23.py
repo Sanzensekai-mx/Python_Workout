@@ -1,5 +1,6 @@
 import json
 import glob
+import csv
 
 
 def print_scores(dir_name):
@@ -25,4 +26,22 @@ def print_scores(dir_name):
             ''')
 
 
-print_scores('scores')
+# print_scores('scores')
+
+
+#  EX23_1
+
+
+def csv_passwd_to_json(passwd_style_file, name_output_file_json):
+    with open(passwd_style_file, 'r', encoding='utf-8') as csv_file, \
+            open(f'{name_output_file_json}.json', 'w', encoding='utf-8') as json_file:
+        csv_file = csv.reader(csv_file, delimiter='\t')
+        list_result = []
+        for line in csv_file:
+            if len(line) > 1:
+                list_result.append(line)
+        print(list_result)
+        json.dump(list_result, json_file, indent=4)
+
+
+csv_passwd_to_json('output_ex22_1_ex23_1.csv', 'output_ex23_1')
