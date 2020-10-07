@@ -155,7 +155,7 @@
         "systemd-timesync",
         "101",
         "102",
-        "systemd Time Synchronization,,,",
+        "systemd Time Synchronization",
         "/run/systemd",
         "/usr/sbin/nologin"
     ],
@@ -163,7 +163,7 @@
         "systemd-network",
         "102",
         "103",
-        "systemd Network Management,,,",
+        "systemd Network Management",
         "/run/systemd",
         "/usr/sbin/nologin"
     ],
@@ -171,7 +171,7 @@
         "systemd-resolve",
         "103",
         "104",
-        "systemd Resolver,,,",
+        "systemd Resolver",
         "/run/systemd",
         "/usr/sbin/nologin"
     ],
@@ -179,8 +179,7 @@
         "dnsmasq",
         "104",
         "65534",
-        "dnsmasq,,,",
-        "/var/lib/misc",
+        "dnsmasq /var/lib/misc",
         "/usr/sbin/nologin"
     ],
     [
@@ -203,7 +202,7 @@
         "tss",
         "107",
         "114",
-        "TPM2 software stack,,,",
+        "TPM2 software stack",
         "/var/lib/tpm",
         "/bin/false"
     ],
@@ -227,7 +226,7 @@
         "usbmux",
         "110",
         "46",
-        "usbmux daemon,,,",
+        "usbmux daemon",
         "/var/lib/usbmux",
         "/usr/sbin/nologin"
     ],
@@ -243,7 +242,7 @@
         "nm-openvpn",
         "112",
         "120",
-        "NetworkManager OpenVPN,,,",
+        "NetworkManager OpenVPN",
         "/var/lib/openvpn/chroot",
         "/usr/sbin/nologin"
     ],
@@ -251,7 +250,7 @@
         "hplip",
         "113",
         "7",
-        "HPLIP system user,,,",
+        "HPLIP system user",
         "/var/run/hplip",
         "/bin/false"
     ],
@@ -259,7 +258,7 @@
         "colord",
         "114",
         "121",
-        "colord colour management daemon,,,",
+        "colord colour management daemon",
         "/var/lib/colord",
         "/usr/sbin/nologin"
     ],
@@ -267,7 +266,7 @@
         "nm-openconnect",
         "115",
         "122",
-        "NetworkManager OpenConnect plugin,,,",
+        "NetworkManager OpenConnect plugin",
         "/var/lib/NetworkManager",
         "/usr/sbin/nologin"
     ],
@@ -275,7 +274,7 @@
         "pulse",
         "116",
         "123",
-        "PulseAudio daemon,,,",
+        "PulseAudio daemon",
         "/var/run/pulse",
         "/usr/sbin/nologin"
     ],
@@ -283,7 +282,7 @@
         "avahi",
         "117",
         "126",
-        "Avahi mDNS daemon,,,",
+        "Avahi mDNS daemon",
         "/var/run/avahi-daemon",
         "/usr/sbin/nologin"
     ],
@@ -299,7 +298,7 @@
         "_flatpak",
         "119",
         "129",
-        "Flatpak system-wide installation helper,,,",
+        "Flatpak system-wide installation helper",
         "/nonexistent",
         "/usr/sbin/nologin"
     ],
@@ -331,7 +330,7 @@
         "ice",
         "123",
         "132",
-        "Ice Service account,,,",
+        "Ice Service account",
         "/var/lib/ice",
         "/usr/sbin/nologin"
     ],

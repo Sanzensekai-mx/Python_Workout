@@ -25,7 +25,7 @@ def passwd_to_csv_user_fields(passwd_style_file, new_csv_file):
         for record in infile:
             if len(record) > 1:
                 try:
-                    outfile.writerow((record[i] for i in user_input))
+                    outfile.writerow((record[i].strip('.,!?') for i in user_input))
                 except IndexError:
                     print('The entered index exceeds the maximum index of the passwd file!!!')
                     break

@@ -44,4 +44,24 @@ def csv_passwd_to_json(passwd_style_file, name_output_file_json):
         json.dump(list_result, json_file, indent=4)
 
 
-csv_passwd_to_json('output_ex22_1_ex23_1.csv', 'output_ex23_1')
+# csv_passwd_to_json('output_ex22_1_ex23_1.csv', 'output_ex23_1')
+
+
+#  EX23_2
+
+
+def csv_passwd_to_json_dict(passwd_style_file, name_output_file_json):
+    with open(passwd_style_file, 'r', encoding='utf-8') as csv_file, \
+            open(f'{name_output_file_json}.json', 'w', encoding='utf-8') as json_file:
+        csv_file = csv.reader(csv_file, delimiter='\t')
+        result_list_of_dicts = []
+        for line in csv_file:
+            if len(line) > 1:
+                line_dict = {"name": line[0], "id": line[1], "id_group": line[2], "data": line[3],
+                             "home dir": line[4], "shell": line[5]}
+                result_list_of_dicts.append(line_dict)
+        print(result_list_of_dicts)
+        json.dump(result_list_of_dicts, json_file, indent=4)
+
+
+csv_passwd_to_json_dict('output_ex22_1_ex23_1.csv', 'output_ex23_2')

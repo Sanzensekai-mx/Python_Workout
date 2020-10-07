@@ -17,29 +17,29 @@ irc	39	39	ircd	/var/run/ircd	/usr/sbin/nologin
 gnats	41	41	Gnats Bug-Reporting System (admin)	/var/lib/gnats	/usr/sbin/nologin
 nobody	65534	65534	nobody	/nonexistent	/usr/sbin/nologin
 _apt	100	65534		/nonexistent	/usr/sbin/nologin
-systemd-timesync	101	102	systemd Time Synchronization,,,	/run/systemd	/usr/sbin/nologin
-systemd-network	102	103	systemd Network Management,,,	/run/systemd	/usr/sbin/nologin
-systemd-resolve	103	104	systemd Resolver,,,	/run/systemd	/usr/sbin/nologin
-dnsmasq	104	65534	dnsmasq,,,	/var/lib/misc	/usr/sbin/nologin
+systemd-timesync	101	102	systemd Time Synchronization	/run/systemd	/usr/sbin/nologin
+systemd-network	102	103	systemd Network Management	/run/systemd	/usr/sbin/nologin
+systemd-resolve	103	104	systemd Resolver	/run/systemd	/usr/sbin/nologin
+dnsmasq	104	65534	dnsmasq	/var/lib/misc	/usr/sbin/nologin
 ntp	105	112		/nonexistent	/usr/sbin/nologin
 messagebus	106	113		/nonexistent	/usr/sbin/nologin
-tss	107	114	TPM2 software stack,,,	/var/lib/tpm	/bin/false
+tss	107	114	TPM2 software stack	/var/lib/tpm	/bin/false
 _rpc	108	65534		/run/rpcbind	/usr/sbin/nologin
 statd	109	65534		/var/lib/nfs	/usr/sbin/nologin
-usbmux	110	46	usbmux daemon,,,	/var/lib/usbmux	/usr/sbin/nologin
+usbmux	110	46	usbmux daemon	/var/lib/usbmux	/usr/sbin/nologin
 saned	111	119		/var/lib/saned	/usr/sbin/nologin
-nm-openvpn	112	120	NetworkManager OpenVPN,,,	/var/lib/openvpn/chroot	/usr/sbin/nologin
-hplip	113	7	HPLIP system user,,,	/var/run/hplip	/bin/false
-colord	114	121	colord colour management daemon,,,	/var/lib/colord	/usr/sbin/nologin
-nm-openconnect	115	122	NetworkManager OpenConnect plugin,,,	/var/lib/NetworkManager	/usr/sbin/nologin
-pulse	116	123	PulseAudio daemon,,,	/var/run/pulse	/usr/sbin/nologin
-avahi	117	126	Avahi mDNS daemon,,,	/var/run/avahi-daemon	/usr/sbin/nologin
+nm-openvpn	112	120	NetworkManager OpenVPN	/var/lib/openvpn/chroot	/usr/sbin/nologin
+hplip	113	7	HPLIP system user	/var/run/hplip	/bin/false
+colord	114	121	colord colour management daemon	/var/lib/colord	/usr/sbin/nologin
+nm-openconnect	115	122	NetworkManager OpenConnect plugin	/var/lib/NetworkManager	/usr/sbin/nologin
+pulse	116	123	PulseAudio daemon	/var/run/pulse	/usr/sbin/nologin
+avahi	117	126	Avahi mDNS daemon	/var/run/avahi-daemon	/usr/sbin/nologin
 lightdm	118	128	Light Display Manager	/var/lib/lightdm	/bin/false
-_flatpak	119	129	Flatpak system-wide installation helper,,,	/nonexistent	/usr/sbin/nologin
+_flatpak	119	129	Flatpak system-wide installation helper	/nonexistent	/usr/sbin/nologin
 debian-tor	120	130		/var/lib/tor	/bin/false
 geoclue	121	131		/var/lib/geoclue	/usr/sbin/nologin
 privoxy	122	65534		/etc/privoxy	/usr/sbin/nologin
-ice	123	132	Ice Service account,,,	/var/lib/ice	/usr/sbin/nologin
+ice	123	132	Ice Service account	/var/lib/ice	/usr/sbin/nologin
 mumble-server	124	133		/var/lib/mumble-server	/usr/sbin/nologin
 sshd	125	65534		/run/sshd	/usr/sbin/nologin
 clamav	126	134		/var/lib/clamav	/bin/false

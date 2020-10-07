@@ -1,0 +1,362 @@
+[
+    {
+        "name": "root",
+        "id": "0",
+        "id_group": "0",
+        "data": "root",
+        "home dir": "/root",
+        "shell": "/bin/bash"
+    },
+    {
+        "name": "daemon",
+        "id": "1",
+        "id_group": "1",
+        "data": "daemon",
+        "home dir": "/usr/sbin",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "bin",
+        "id": "2",
+        "id_group": "2",
+        "data": "bin",
+        "home dir": "/bin",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "sys",
+        "id": "3",
+        "id_group": "3",
+        "data": "sys",
+        "home dir": "/dev",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "sync",
+        "id": "4",
+        "id_group": "65534",
+        "data": "sync",
+        "home dir": "/bin",
+        "shell": "/bin/sync"
+    },
+    {
+        "name": "games",
+        "id": "5",
+        "id_group": "60",
+        "data": "games",
+        "home dir": "/usr/games",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "man",
+        "id": "6",
+        "id_group": "12",
+        "data": "man",
+        "home dir": "/var/cache/man",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "lp",
+        "id": "7",
+        "id_group": "7",
+        "data": "lp",
+        "home dir": "/var/spool/lpd",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "mail",
+        "id": "8",
+        "id_group": "8",
+        "data": "mail",
+        "home dir": "/var/mail",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "news",
+        "id": "9",
+        "id_group": "9",
+        "data": "news",
+        "home dir": "/var/spool/news",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "uucp",
+        "id": "10",
+        "id_group": "10",
+        "data": "uucp",
+        "home dir": "/var/spool/uucp",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "proxy",
+        "id": "13",
+        "id_group": "13",
+        "data": "proxy",
+        "home dir": "/bin",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "www-data",
+        "id": "33",
+        "id_group": "33",
+        "data": "www-data",
+        "home dir": "/var/www",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "backup",
+        "id": "34",
+        "id_group": "34",
+        "data": "backup",
+        "home dir": "/var/backups",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "list",
+        "id": "38",
+        "id_group": "38",
+        "data": "Mailing List Manager",
+        "home dir": "/var/list",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "irc",
+        "id": "39",
+        "id_group": "39",
+        "data": "ircd",
+        "home dir": "/var/run/ircd",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "gnats",
+        "id": "41",
+        "id_group": "41",
+        "data": "Gnats Bug-Reporting System (admin)",
+        "home dir": "/var/lib/gnats",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "nobody",
+        "id": "65534",
+        "id_group": "65534",
+        "data": "nobody",
+        "home dir": "/nonexistent",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "_apt",
+        "id": "100",
+        "id_group": "65534",
+        "data": "",
+        "home dir": "/nonexistent",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "systemd-timesync",
+        "id": "101",
+        "id_group": "102",
+        "data": "systemd Time Synchronization",
+        "home dir": "/run/systemd",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "systemd-network",
+        "id": "102",
+        "id_group": "103",
+        "data": "systemd Network Management",
+        "home dir": "/run/systemd",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "systemd-resolve",
+        "id": "103",
+        "id_group": "104",
+        "data": "systemd Resolver",
+        "home dir": "/run/systemd",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "dnsmasq",
+        "id": "104",
+        "id_group": "65534",
+        "data": "dnsmasq",
+        "home dir": "/var/lib/misc",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "ntp",
+        "id": "105",
+        "id_group": "112",
+        "data": "",
+        "home dir": "/nonexistent",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "messagebus",
+        "id": "106",
+        "id_group": "113",
+        "data": "",
+        "home dir": "/nonexistent",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "tss",
+        "id": "107",
+        "id_group": "114",
+        "data": "TPM2 software stack",
+        "home dir": "/var/lib/tpm",
+        "shell": "/bin/false"
+    },
+    {
+        "name": "_rpc",
+        "id": "108",
+        "id_group": "65534",
+        "data": "",
+        "home dir": "/run/rpcbind",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "statd",
+        "id": "109",
+        "id_group": "65534",
+        "data": "",
+        "home dir": "/var/lib/nfs",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "usbmux",
+        "id": "110",
+        "id_group": "46",
+        "data": "usbmux daemon",
+        "home dir": "/var/lib/usbmux",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "saned",
+        "id": "111",
+        "id_group": "119",
+        "data": "",
+        "home dir": "/var/lib/saned",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "nm-openvpn",
+        "id": "112",
+        "id_group": "120",
+        "data": "NetworkManager OpenVPN",
+        "home dir": "/var/lib/openvpn/chroot",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "hplip",
+        "id": "113",
+        "id_group": "7",
+        "data": "HPLIP system user",
+        "home dir": "/var/run/hplip",
+        "shell": "/bin/false"
+    },
+    {
+        "name": "colord",
+        "id": "114",
+        "id_group": "121",
+        "data": "colord colour management daemon",
+        "home dir": "/var/lib/colord",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "nm-openconnect",
+        "id": "115",
+        "id_group": "122",
+        "data": "NetworkManager OpenConnect plugin",
+        "home dir": "/var/lib/NetworkManager",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "pulse",
+        "id": "116",
+        "id_group": "123",
+        "data": "PulseAudio daemon",
+        "home dir": "/var/run/pulse",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "avahi",
+        "id": "117",
+        "id_group": "126",
+        "data": "Avahi mDNS daemon",
+        "home dir": "/var/run/avahi-daemon",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "lightdm",
+        "id": "118",
+        "id_group": "128",
+        "data": "Light Display Manager",
+        "home dir": "/var/lib/lightdm",
+        "shell": "/bin/false"
+    },
+    {
+        "name": "_flatpak",
+        "id": "119",
+        "id_group": "129",
+        "data": "Flatpak system-wide installation helper",
+        "home dir": "/nonexistent",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "debian-tor",
+        "id": "120",
+        "id_group": "130",
+        "data": "",
+        "home dir": "/var/lib/tor",
+        "shell": "/bin/false"
+    },
+    {
+        "name": "geoclue",
+        "id": "121",
+        "id_group": "131",
+        "data": "",
+        "home dir": "/var/lib/geoclue",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "privoxy",
+        "id": "122",
+        "id_group": "65534",
+        "data": "",
+        "home dir": "/etc/privoxy",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "ice",
+        "id": "123",
+        "id_group": "132",
+        "data": "Ice Service account",
+        "home dir": "/var/lib/ice",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "mumble-server",
+        "id": "124",
+        "id_group": "133",
+        "data": "",
+        "home dir": "/var/lib/mumble-server",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "sshd",
+        "id": "125",
+        "id_group": "65534",
+        "data": "",
+        "home dir": "/run/sshd",
+        "shell": "/usr/sbin/nologin"
+    },
+    {
+        "name": "clamav",
+        "id": "126",
+        "id_group": "134",
+        "data": "",
+        "home dir": "/var/lib/clamav",
+        "shell": "/bin/false"
+    }
+]
