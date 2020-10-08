@@ -27,5 +27,23 @@ def decrypt_with_char(input_file, output_file):
         out_f.write('\n')
 
 
-encrypt_with_ord('stix.txt', 'stix_ex24_1_encrypt_ord.txt')
-decrypt_with_char('stix_ex24_1_encrypt_ord.txt', 'stix_ex24_1_decrypt_char.txt')
+# encrypt_with_ord('stix.txt', 'stix_ex24_1_encrypt_ord.txt')
+# decrypt_with_char('stix_ex24_1_encrypt_ord.txt', 'stix_ex24_1_decrypt_char.txt')
+
+
+# EX24_2
+
+
+def leave_vowels_not_vowels(input_file, output_vowels, output_not_vowels):
+    with open(input_file, 'r', encoding='utf-8') as in_f, open(output_vowels, 'w', encoding='utf-8') as out_v, open(
+            output_not_vowels, 'w', encoding='utf-8') as out_not_v:
+        for line in in_f:
+            for char in line:
+                if char in 'aeouiyауеоияыюэ.,?!;:':
+                    out_v.write(char)
+                if char not in 'aeouiyaeouiyауеоияыюэ':
+                    out_not_v.write(char)
+            out_v.write('\n')
+
+
+leave_vowels_not_vowels('stix.txt', 'stix_only_vowels.txt', 'stix_only_not_vowels.txt')
