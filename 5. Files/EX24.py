@@ -1,3 +1,7 @@
+import csv
+import collections
+
+
 def reverse_lines(input_file, output_file):
     with open(input_file, 'r', encoding='utf-8') as in_f, open(output_file, 'w', encoding='utf-8') as out_f:
         for line in in_f:
@@ -31,7 +35,7 @@ def decrypt_with_char(input_file, output_file):
 # decrypt_with_char('stix_ex24_1_encrypt_ord.txt', 'stix_ex24_1_decrypt_char.txt')
 
 
-# EX24_2
+#  EX24_2
 
 
 def leave_vowels_not_vowels(input_file, output_vowels, output_not_vowels):
@@ -46,4 +50,20 @@ def leave_vowels_not_vowels(input_file, output_vowels, output_not_vowels):
             out_v.write('\n')
 
 
-leave_vowels_not_vowels('stix.txt', 'stix_only_vowels.txt', 'stix_only_not_vowels.txt')
+# leave_vowels_not_vowels('stix.txt', 'stix_only_vowels.txt', 'stix_only_not_vowels.txt')
+
+
+#  EX24_3
+
+
+def users_use_this_shell(passwd_file, outfile):
+    with open(passwd_file, 'r', encoding='utf-8') as passwd, open(outfile, 'w', encoding='utf-8') as out:
+        passwd = csv.reader(passwd, delimiter=':')
+        result_dict = collections.defaultdict(list)
+        for line in passwd:
+            result_dict[line[-1]].append(line[0])
+        for shell, names in result_dict.items():
+            out.write(f'{shell}: {" ".join(names)}\n')
+
+
+users_use_this_shell('passwd', 'passwd_ex24_3.txt')
