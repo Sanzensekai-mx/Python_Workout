@@ -39,3 +39,21 @@ def factorial_like_func(*args):
 # print(factorial_like_func(1, 2))
 # print(factorial_like_func(10, 20, 30))
 # print(factorial_like_func(0, 1, 2))
+
+
+#  EX25_3
+
+def any_join(data, glue=" "):
+    transform_data_to_str = [str(i) for i in data]
+    result = ''
+    for el in transform_data_to_str:
+        if el == transform_data_to_str[-1]:
+            result += el
+            break
+        result += el + glue
+    return result
+
+
+print(any_join([1, 2, 3]))
+print(any_join(['a', 'b', 'c'], '**'))
+print(any_join('abc', '**'))
