@@ -19,4 +19,23 @@ def copy_file(input_file_name, *args):
                     to_file.write(line)
 
 
-copy_file('stix6.txt', 'stix6_1.txt', 'stix6_2.txt')
+# copy_file('stix6.txt', 'stix6_1.txt', 'stix6_2.txt')
+
+
+#  EX25_2
+
+
+def factorial_like_func(*args):
+    result = 0
+    for arg in args:
+        if args.index(arg) == 0:
+            result += arg
+        result *= arg
+    return result
+
+
+# print(factorial_like_func(0, 0, 0, 0, 0))
+# print(factorial_like_func(1, 2, 3, 4, 5))
+# print(factorial_like_func(1, 2))
+# print(factorial_like_func(10, 20, 30))
+# print(factorial_like_func(0, 1, 2))
