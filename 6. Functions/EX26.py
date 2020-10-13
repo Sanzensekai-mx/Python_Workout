@@ -13,6 +13,9 @@ def calc(string_to_solve):
     return operations[op](first, second)
 
 
-print(calc('+ 1 2'))
-print(calc('- 1 2'))
-print(calc('* 2 2'))
+# print(calc('+ 1 2'))
+# print(calc('- 1 2'))
+# print(calc('* 2 2'))
+
+
+#  EX26_1
