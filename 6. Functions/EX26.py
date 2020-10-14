@@ -40,5 +40,16 @@ def more_num_calc(string_to_solve):
     return result
 
 
-print(more_num_calc('+ 3 5 7'))
-print(more_num_calc('/ 100 5 5'))
+# print(more_num_calc('+ 3 5 7'))
+# print(more_num_calc('/ 100 5 5'))
+
+
+# EX26_2
+
+
+def apply_to_each(func, iterable):
+    return list(map(func, iterable))
+
+
+print(apply_to_each(chr, [1, 2, 3, 4, 5]))
+print(apply_to_each(lambda x: int(x) + 100, ['1', '2', '3', '4', '5']))
