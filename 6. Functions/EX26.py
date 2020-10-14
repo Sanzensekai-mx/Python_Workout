@@ -44,12 +44,26 @@ def more_num_calc(string_to_solve):
 # print(more_num_calc('/ 100 5 5'))
 
 
-# EX26_2
+#  EX26_2
 
 
 def apply_to_each(func, iterable):
     return list(map(func, iterable))
 
 
-print(apply_to_each(chr, [1, 2, 3, 4, 5]))
-print(apply_to_each(lambda x: int(x) + 100, ['1', '2', '3', '4', '5']))
+# print(apply_to_each(chr, [1, 2, 3, 4, 5]))
+# print(apply_to_each(lambda x: int(x) + 100, ['1', '2', '3', '4', '5']))
+
+
+#  EX26_3
+
+
+def transform_lines(func, input_file, output_file):
+    with open(input_file, 'r', encoding='utf-8') as in_f, open(output_file, 'w', encoding='utf-8') as out_f:
+        for line in in_f:
+            if line == '\n':
+                out_f.write('\n')
+            out_f.write(f"{''.join(list(map(func, line.split())))}\n")
+
+
+transform_lines(lambda x: f' {x} Ivan', 'stix6.txt', 'output_26_3.txt')
