@@ -11,9 +11,40 @@ def password_generator(str_passwd_symbols):
     return create_passwd
 
 
-alpha_password = password_generator('abcdef')
-symbol_password = password_generator('!@#$%')
-print(alpha_password(5))
-print(alpha_password(10))
-print(symbol_password(5))
-print(symbol_password(10))
+# alpha_password = password_generator('abcdef')
+# symbol_password = password_generator('!@#$%')
+# print(alpha_password(5))
+# print(alpha_password(10))
+# print(symbol_password(5))
+# print(symbol_password(10))
+
+
+#  EX27_1
+
+
+def create_passwd_checker(min_uppercase, min_lowercase, min_punctuation, min_digits):
+    def take_passwd(check_this_passwd):
+        uppercase, lowercase, punctuation, digits = [], [], [], []
+        for el in check_this_passwd:
+            if el in 'abcdefghijklmnopqrstuvwxyz':
+                lowercase.append(el)
+            elif el in 'abcdefghijklmnopqrstuvwxyz'.upper():
+                uppercase.append(el)
+            elif el in '.,&!@#$;:\'\"\\/()[]`~№^*':
+                punctuation.append(el)
+            elif el in '0123456789':
+                digits.append(el)
+        output = {'uppercase': min_uppercase <= len(uppercase), 'lowercase': min_lowercase <= len(lowercase),
+                  'punctuation': min_punctuation <= len(punctuation), 'digits': min_digits <= len(digits)}
+        for k, v in output.items():
+            print(f'{k} -- {v}')
+        return True if False not in output.values() else False
+
+    return take_passwd
+
+
+my_password = 'Mac.MarMok1357!!!'
+not_my_password = 'macMae1'
+
+print(create_passwd_checker(3, 4, 2, 2)(my_password))
+print(create_passwd_checker(3, 4, 2, 2)(not_my_password))
