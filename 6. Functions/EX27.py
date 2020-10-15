@@ -63,5 +63,27 @@ def get_item(arg):
 
 d = {'a': 1, 'b': 2}
 f = get_item('a')
-print(f(d))
-print(get_item('b')(d))
+# print(f(d))
+# print(get_item('b')(d))
+
+
+#  27_3
+
+def f1(num):
+    return 5 + num
+
+
+def f2(num):
+    return num + 100
+
+
+def do_both(func1, func2):
+    def g(arg):
+        return func2(func1(arg))
+
+    return g
+
+
+x = 10
+print(f2(f1(x)))
+print(do_both(f1, f2)(x))
