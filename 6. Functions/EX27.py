@@ -46,5 +46,22 @@ def create_passwd_checker(min_uppercase, min_lowercase, min_punctuation, min_dig
 my_password = 'Mac.MarMok1357!!!'
 not_my_password = 'macMae1'
 
-print(create_passwd_checker(3, 4, 2, 2)(my_password))
-print(create_passwd_checker(3, 4, 2, 2)(not_my_password))
+
+# print(create_passwd_checker(3, 4, 2, 2)(my_password))
+# print(create_passwd_checker(3, 4, 2, 2)(not_my_password))
+
+
+#  27_2 like itemgetter
+
+
+def get_item(arg):
+    def func(data_structure):
+        return data_structure[arg]
+
+    return func
+
+
+d = {'a': 1, 'b': 2}
+f = get_item('a')
+print(f(d))
+print(get_item('b')(d))
