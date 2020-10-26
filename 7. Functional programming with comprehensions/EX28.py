@@ -26,7 +26,6 @@ def sum_hex_num(list_hex_str):
 
 #  EX28_3
 
-# ?????
 def reverse_comprehension(text_file):
     with open(text_file, 'r') as f:
         return [' '.join(line.split()[::-1]) for line in f for line in line.splitlines()]
