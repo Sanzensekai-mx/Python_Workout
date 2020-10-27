@@ -1,3 +1,6 @@
+import collections
+
+
 def sum_numbers(string):
     return sum([int(i) for i in string.split() if i.isdigit()])
 
@@ -23,4 +26,14 @@ def covert_phone_num(list_of_num):
     return result_list
 
 
-print(covert_phone_num(['123-456-7890', '123-333-4444', '123-777-8888']))
+# print(covert_phone_num(['123-456-7890', '123-333-4444', '123-777-8888']))
+
+
+#  EX29_3
+
+
+list_of_dicts = [{'name': 'Ivan', 'age': 20}, {'name': 'Igor', 'age': 18}, {'name': 'Izabel', 'age': 21},
+                 {'name': 'Ken', 'age': 19}, {'name': 'Il', 'age': 17}]
+
+[dict_i.update({'age in month': dict_i['age'] * 12}) for dict_i in list_of_dicts]
+print(list_of_dicts)
