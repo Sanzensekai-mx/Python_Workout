@@ -11,5 +11,16 @@ def pl_file(filename):
 
 
 # print(pl_word('Milk'))
-print(pl_file('stix.txt'))
+# print(pl_file('stix.txt'))
 
+
+# EX31_1
+
+
+def func_file(filename, func):
+    return ' '.join(func(one_word)
+                    for one_line in open(filename)
+                    for one_word in one_line.split())
+
+
+print(func_file('stix.txt', pl_word))
