@@ -1,3 +1,8 @@
+import operator
+import collections
+import pprint
+
+
 def pl_word(word):
     if word[0] in 'aeouiyAEOUYI':
         return f'{word}way'
@@ -31,6 +36,20 @@ def func_file(filename, func):
 
 list_of_dicts = [{'name': 'Ivan', 'age': '20'}, {'name': 'El', 'age': '21'}, {'name': 'Mica', 'age': '18'},
                  {'name': 'Kl', 'age': '12'}]
-print([(name, value) for dict_in_list in list_of_dicts for name, value in dict_in_list.items()])
+# print([(name, value) for dict_in_list in list_of_dicts for name, value in dict_in_list.items()])
+
+#  EX31_3
 
 
+list_of_dicts = [{'name': 'Ivan', 'hobbies': 'programming'}, {'name': 'El', 'hobbies': 'programming'},
+                 {'name': 'Mica', 'hobbies': 'draw'},
+                 {'name': 'Kl', 'hobbies': 'draw'}, {'name': 'KlS', 'hobbies': 'draw'},
+                 {'name': 'KlS', 'hobbies': 'listen music'}, {'name': 'KlSLM', 'hobbies': 'listen music'},
+                 {'name': 'MLKlS', 'hobbies': 'write'}]
+
+# result_dict = collections.Counter([dict_in_list.get('hobbies') for dict_in_list in list_of_dicts])
+
+result_list = sorted([(name, int(value)) for name, value in collections.Counter([dict_in_list.get('hobbies')
+                                                                         for dict_in_list in list_of_dicts]).items()])
+for hobby in [cortezh[0] for cortezh in result_list[:3]]:
+    print(hobby)
