@@ -29,7 +29,6 @@ child_grandchildren = {'A': ['B', 'C', 'D'], 'E': ['F', 'G']}
 
 
 #  EX30_3
-# Я не знаю...........
 
 child_grandchildren = {'Igor': [{'name': 'Ivan', 'age': '20'}, {'name': 'El', 'age': '21'}],
                        'Liza': [{'name': 'Mica', 'age': '18'}, {'name': 'Kl', 'age': '12'}]}
