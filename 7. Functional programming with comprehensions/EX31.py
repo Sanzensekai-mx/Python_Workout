@@ -23,4 +23,14 @@ def func_file(filename, func):
                     for one_word in one_line.split())
 
 
-print(func_file('stix.txt', pl_word))
+# print(func_file('stix.txt', pl_word))
+
+
+# EX31_2
+
+
+list_of_dicts = [{'name': 'Ivan', 'age': '20'}, {'name': 'El', 'age': '21'}, {'name': 'Mica', 'age': '18'},
+                 {'name': 'Kl', 'age': '12'}]
+print([(name, value) for dict_in_list in list_of_dicts for name, value in dict_in_list.items()])
+
+
