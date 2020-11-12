@@ -1,0 +1,3 @@
+ComSpec=%SystemRoot%\system32\cmd.exe
+DriverData=C:\Windows\System32\Drivers\DriverData
+OS=Windows_NT

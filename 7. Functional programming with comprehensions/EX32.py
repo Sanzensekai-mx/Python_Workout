@@ -22,4 +22,8 @@ def count_vowels_in_words_in_str(string):
 
 #  EX32_2
 
-print({file_name: os.path.getsize(file_name) for file_name in os.listdir()})
+# print({file_name: os.path.getsize(file_name) for file_name in os.listdir()})
+
+#  EX32_3
+
+print({var: value for string in open('vars.txt') for var, value in dict([string.split('=')]).items()})
