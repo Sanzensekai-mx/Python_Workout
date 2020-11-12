@@ -1,3 +1,5 @@
+import os
+
 d = {'a': 1, 'b': 2, 'c': 3}
 
 
@@ -16,4 +18,8 @@ def count_vowels_in_words_in_str(string):
     return {word: len([i for i in word if i in 'aeoiuy']) for word in string.split()}
 
 
-print(count_vowels_in_words_in_str(example_str))
+# print(count_vowels_in_words_in_str(example_str))
+
+#  EX32_2
+
+print({file_name: os.path.getsize(file_name) for file_name in os.listdir()})
