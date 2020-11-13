@@ -1,3 +1,6 @@
+import os
+
+
 def transform_values(func, input_dict):
     return {key: func(value) for key, value in input_dict.items()}
 
@@ -17,4 +20,15 @@ def passwd_to_dict(passwd_file):
             for user_name, user_id in {string.split(':')[0]: string.split(':')[2]}.items()}
 
 
-print(passwd_to_dict('passwd'))
+# print(passwd_to_dict('passwd'))
+
+
+# EX33_3
+
+
+def dir_full(dir_name):
+    return {name: os.stat(name).st_size for name in
+            os.listdir(dir_name if '\\' not in dir_name else os.path.join(os.getcwd(), dir_name))}
+
+
+print(dir_full(os.getcwd()))
