@@ -13,4 +13,15 @@ def get_user_shell(passwd_file):
     return {string.strip().split(':')[-1] for string in open(passwd_file)}
 
 
-print(get_user_shell('passwd'))
+# print(get_user_shell('passwd'))
+
+
+# EX34_2
+
+
+def get_length(file_name):
+    return {len(word.strip()) for word in open(file_name)}
+
+
+print(get_length('words.txt'))
+print(get_length('stix.txt'))
