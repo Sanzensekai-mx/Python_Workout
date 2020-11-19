@@ -16,4 +16,14 @@ def config_to_dict(filename):
             for key, value in {string.split('=')[0]: string.split('=')[1]}.items()}
 
 
-print(config_to_dict('config.txt'))
+# print(config_to_dict('config.txt'))
+
+
+# EX35a_2
+
+def config_to_dict_expand(filename):
+    return {key.strip(): int(value.strip()) for string_i in open(filename)
+            for key, value in {string_i.split('=')[0]: string_i.split('=')[1]}.items() if value.strip().isdigit()}
+
+
+print(config_to_dict_expand('config.txt'))
