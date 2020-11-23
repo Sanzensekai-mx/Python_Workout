@@ -5,8 +5,11 @@ def gematria_dict():
     return {char: index for index, char in enumerate(string.ascii_lowercase, 1)}
 
 
+GEMATRIA = gematria_dict()
+
+
 def gematria_for(string_):
-    return sum(gematria_dict().get(char, 0) for char in string_)
+    return sum(GEMATRIA.get(char, 0) for char in string_)
 
 
 def gematria_equal_words(string_):
