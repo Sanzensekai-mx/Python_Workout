@@ -47,3 +47,5 @@ def transform_json_to_another_dict(json_file):
 
 print(transform_json_to_dict('cities.json'))
 print(transform_json_to_another_dict('cities.json'))
+print(len(transform_json_to_dict('cities.json')))
+print(len(json.load(open('cities.json'))))
