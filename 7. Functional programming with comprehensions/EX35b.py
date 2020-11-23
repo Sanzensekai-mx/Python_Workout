@@ -17,4 +17,11 @@ def gematria_equal_words(string_):
     return [word.strip() for word in open('words.txt') if gematria_for(word.lower()) == score]
 
 
-print(gematria_equal_words('cat'))
+# print(gematria_equal_words('cat'))
+
+
+# EX35b_1
+
+fahrenheit_city = {'Moscow': 30, 'Ulyanovsk': 25}
+
+print({city: ((value - 32) * 5)//9 for city, value in fahrenheit_city.items()})
