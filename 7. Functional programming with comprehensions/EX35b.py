@@ -30,12 +30,34 @@ new_dict = {city: ((value - 32) * 5) // 9 for city, value in fahrenheit_city.ite
 
 # EX35b_2
 
-list_of_tuple = [('Artur Kon', 'Star Wars', 188), ('Dantes Broudi', 'keep calm', 347),
-                 ('Reuven Lerner', 'Python Workout', 500)]
+list_of_tuple = [('Artur Kon', 'Star Wars', 5), ('Dantes Broudi', 'keep calm', 10),
+                 ('Reuven Lerner', 'Python Workout', 12)]
 book_dict = {book_title: {'author’s first name': author.split(' ')[0],
                           'the author’s last name': author.split(' ')[1].strip(),
                           'cost': cost}
              for one_tuple in list_of_tuple for author, book_title in {one_tuple[0]: one_tuple[1]}.items()
              for cost in {None: one_tuple[2]}.values()}
 
-pprint.pprint(book_dict)
+# pprint.pprint(book_dict)
+
+
+# EX35b_3
+
+dollars_in_not_dollars = {'RUB': 75.56, 'EUR': 0.8417, 'GBP': 0.7484}
+
+
+def transform_dollars_to():
+    while True:
+        user_input = input('--> ')
+        if user_input not in dollars_in_not_dollars.keys():
+            print('try again')
+            continue
+        break
+    return {book_title: {'author’s first name': author.split(' ')[0],
+                         'the author’s last name': author.split(' ')[1].strip(),
+                         'cost': cost}
+            for one_tuple in list_of_tuple for author, book_title in {one_tuple[0]: one_tuple[1]}.items()
+            for cost in {None: round(one_tuple[2] * dollars_in_not_dollars.get(user_input), 2)}.values()}
+
+
+print(transform_dollars_to())
