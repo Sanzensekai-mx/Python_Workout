@@ -50,6 +50,8 @@ p3 = Person()
 p4 = Person()
 p5 = Person()
 
+# print(Person.population)
+
 del p1
 del p2
 del p3
@@ -61,6 +63,7 @@ del p5
 # print(p1.population)
 
 # EX40_3
+
 
 class Transaction:
     total_sum = 0
