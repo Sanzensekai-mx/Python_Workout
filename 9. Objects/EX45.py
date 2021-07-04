@@ -1,3 +1,6 @@
+from collections import Counter
+
+
 class NotCageObjectException(Exception):
     pass
 
@@ -21,19 +24,37 @@ class Zoo:
                 print('В метод переданы объекты не принадлежащие классу Cage')
 
     def transfer_animal(self, transfer_animal, target_zoo):
+        flag = False
         for cage in self.cages.copy():
             for animal in cage.animals.copy():
+                if flag:
+                    break
                 if transfer_animal is animal:
                     cage.animals.remove(animal)
+                    flag = True
+                    cage.space += animal.space_required
                     break
-            break
+                else:
+                    continue
+            # break
         for cage in target_zoo.cages:
             cage.add_animals(transfer_animal)
             if cage.animals[-1] is transfer_animal:
                 break
 
-    def animals_by_color(self, color):
-        return [animal for cage in self.cages for animal in cage.animals if animal.color == color]
+    def get_animals(self, color=None, legs=None):
+        # res1, res2 = [], []
+        if color and legs:
+            res = [animal for cage in self.cages for animal in cage.animals if
+                   animal.color == color and animal.number_of_legs == int(legs)]
+        elif color:
+            res = [animal for cage in self.cages for animal in cage.animals if animal.color == color]
+        elif legs:
+            res = [animal for cage in self.cages for animal in cage.animals if animal.number_of_legs == int(legs)]
+        return res
+
+    def animals_by_color(self, *colors):
+        return [animal for cage in self.cages for animal in cage.animals if animal.color in colors]
 
     def animals_by_legs(self, legs):
         return [animal for cage in self.cages for animal in cage.animals if animal.number_of_legs == legs]
@@ -67,6 +88,7 @@ class Cage:
                                 self.space -= i.space_required
                                 self.animals.append(i)
                                 self.animals_class.append(i.__class__.__name__)
+                                break
                             else:
                                 raise NoPlaceCage
                         else:
@@ -179,7 +201,7 @@ print(z)
 
 z2 = Zoo()
 
-c21 = Cage(1)
+c21 = BigCage(1)
 c21.add_animals(sheep1, parrot)
 c22 = Cage(2)
 c22.add_animals(sheep)
@@ -187,7 +209,38 @@ c23 = BigCage(3)
 c23.add_animals(wolf, wolf)
 
 z2.add_cages(c21, c22, c23)
+print(z)
+print('========')
+print(z2)
+print('+++++++++')
 
 z.transfer_animal(wolf, z2)
 print(z)
+print('========')
 print(z2)
+print('+++++++++')
+# print(z2)
+# print(z2.animals_by_color('white', 'black'))
+# print(z.animals_by_color('white', 'green'))
+
+z2.transfer_animal(wolf, z)
+print(z)
+print('========')
+print(z2)
+print('+++++++++')
+z2.transfer_animal(sheep, z)
+print(z)
+print('========')
+print(z2)
+print('+++++++++')
+z.transfer_animal(snake, z2)
+print(z)
+print('========')
+print(z2)
+print('+++++++++')
+z.transfer_animal(parrot2, z2)
+print(z)
+print('========')
+print(z2)
+print('+++++++++')
+print(z.get_animals(color='black', legs=str(0)))
