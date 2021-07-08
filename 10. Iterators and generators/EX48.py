@@ -1,4 +1,5 @@
 import os
+import re
 
 
 def read_all_lines(path_to_dir):
@@ -41,5 +42,24 @@ def read_all_lines_v2(path_to_dir):
         l += 1
 
 
-for one_line in read_all_lines_v2('C:\\Users\\SanZenSekai\\Desktop\\dir'):
+# for one_line in read_all_lines_v2('C:\\Users\\SanZenSekai\\Desktop\\dir'):
+#     print(one_line)
+
+
+# 3
+
+def read_all_lines_v3(path_to_dir, string):
+    string = rf'.*{string}.*'
+    for num_file, file in enumerate(os.listdir(path_to_dir), 1):
+        with open(os.path.join(path_to_dir, file), 'r', encoding='utf-8') as r:
+            try:
+                for num_line, line in enumerate(r, 1):
+                    if re.match(string, line):
+                        yield file, num_file, num_line, line
+                    pass
+            except OSError:
+                pass
+
+
+for one_line in read_all_lines_v3('C:\\Users\\SanZenSekai\\Desktop\\dir', 'Выполняется ли'):
     print(one_line)
